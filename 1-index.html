@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prescient Road - Private Market Advice for Long-Term Capital</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:title" content="Prescient Road - Private Market Advice for Long-Term Capital">
+<meta property="og:description" content="Prescient Road advises family offices, in the US and internationally, on entering venture capital as an asset class.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://prescientroad.com/">
+<meta property="og:image" content="https://prescientroad.com/logo.jpg">
+<meta name="description" content="Prescient Road advises family offices and venture investors on manager selection, portfolio construction, and direct investment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF7F4;
+    --ivory-deep:#F1EAE2;
+    --navy:#1B2F4B;
+    --navy-soft:#2A4060;
+    --stone:#7C7668;
+    --ink:#26313F;
+    --hairline:#E2DACB;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,sans-serif;
+    font-weight:300;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+  .narrow{max-width:720px;margin:0 auto;padding:0 32px;}
+
+  /* nav */
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:rgba(251,247,244,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--hairline);
+  }
+  .nav-inner{
+    max-width:1080px;margin:0 auto;padding:18px 32px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .wordmark{
+    font-family:'Cinzel',serif;font-weight:500;font-size:15px;
+    letter-spacing:.32em;color:var(--navy);text-decoration:none;
+  }
+  .nav-links a{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--stone);text-decoration:none;margin-left:34px;
+    font-weight:400;transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--navy);}
+
+  /* hero */
+  .hero{padding:96px 0 88px;text-align:center;}
+  .hero img{width:min(430px,80vw);height:auto;display:block;margin:0 auto 56px;}
+  .hero h1{
+    font-family:'Cinzel',serif;font-weight:500;color:var(--navy);
+    font-size:clamp(26px,3.4vw,38px);line-height:1.35;letter-spacing:.04em;
+    max-width:760px;margin:0 auto 26px;
+  }
+  .hero p{
+    max-width:600px;margin:0 auto 44px;color:var(--stone);font-size:18px;
+  }
+  .btn{
+    display:inline-block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:500;color:var(--ivory);background:var(--navy);
+    padding:16px 42px;text-decoration:none;transition:background .2s;
+  }
+  .btn:hover{background:var(--navy-soft);}
+  .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy);}
+  .btn.ghost:hover{background:var(--navy);color:var(--ivory);}
+
+  section{padding:88px 0;border-top:1px solid var(--hairline);}
+  .kicker{
+    font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--stone);font-weight:500;margin-bottom:20px;
+  }
+  h2{
+    font-family:'Cinzel',serif;font-weight:500;color:var(--navy);
+    font-size:clamp(22px,2.6vw,30px);letter-spacing:.05em;line-height:1.4;margin-bottom:18px;
+  }
+  .lead{color:var(--stone);max-width:640px;margin-bottom:56px;}
+
+  /* services grid */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:56px 48px;}
+  .svc h3{
+    font-family:'Cinzel',serif;font-weight:500;font-size:14px;letter-spacing:.14em;
+    color:var(--navy);text-transform:uppercase;margin-bottom:14px;
+    padding-bottom:14px;border-bottom:1px solid var(--hairline);
+  }
+  .svc p{font-size:15px;color:var(--ink);line-height:1.7;}
+  /* two audience columns */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:72px;}
+  .duo h3{
+    font-family:'Cinzel',serif;font-weight:500;font-size:17px;letter-spacing:.12em;
+    color:var(--navy);text-transform:uppercase;margin-bottom:20px;
+    padding-bottom:16px;border-bottom:1px solid var(--hairline);
+  }
+  .duo ul{list-style:none;}
+  .duo li{
+    padding:13px 0 13px 26px;position:relative;font-size:16px;color:var(--ink);
+    border-bottom:1px solid var(--ivory-deep);
+  }
+  .duo li::before{
+    content:"";position:absolute;left:0;top:24px;width:10px;height:1px;background:var(--stone);
+  }
+
+  /* perspective seats */
+  .seats{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:8px;}
+  .seat{
+    padding:28px 22px 8px;border-left:1px solid var(--hairline);
+  }
+  .seat:first-child{border-left:none;padding-left:0;}
+  .seat .num{
+    font-family:'Cinzel',serif;font-size:13px;color:var(--stone);letter-spacing:.1em;
+    display:block;margin-bottom:12px;
+  }
+  .seat p{font-size:15px;line-height:1.6;color:var(--ink);}
+  .principle{
+    margin-top:64px;padding:40px 0 0;border-top:1px solid var(--hairline);
+    font-family:'Cinzel',serif;font-weight:500;color:var(--navy);
+    font-size:clamp(17px,2vw,21px);line-height:1.6;letter-spacing:.03em;max-width:820px;
+  }
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+  .about-copy p{margin-bottom:22px;font-size:16px;}
+  .cred{border-left:1px solid var(--hairline);padding-left:56px;}
+  .cred-block{margin-bottom:36px;}
+  .cred-block h4{
+    font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--stone);
+    font-weight:500;margin-bottom:14px;
+  }
+  .cred-block p{font-size:16px;color:var(--navy);font-weight:400;line-height:1.9;}
+
+  /* contact */
+  .contact{text-align:center;padding:104px 0;}
+  .contact h2{margin-bottom:22px;}
+  .contact p{max-width:540px;margin:0 auto 44px;color:var(--stone);}
+
+  footer{
+    border-top:1px solid var(--hairline);padding:44px 0 52px;
+  }
+  .foot-inner{
+    max-width:1080px;margin:0 auto;padding:0 32px;
+    display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;
+  }
+  footer .fw{font-family:'Cinzel',serif;font-size:12px;letter-spacing:.3em;color:var(--navy);}
+  footer .disclaimer{
+    font-size:12px;color:var(--stone);max-width:560px;line-height:1.7;
+  }
+  footer .copy{font-size:12px;color:var(--stone);margin-top:10px;}
+
+  @media(max-width:860px){
+    .duo,.about-grid{grid-template-columns:1fr;gap:56px;}
+    .svc-grid{grid-template-columns:1fr 1fr;gap:48px 40px;}
+    .seats{grid-template-columns:1fr 1fr;gap:32px 0;}
+    .seat{border-left:none;padding-left:0;}
+    .cred{border-left:none;padding-left:0;}
+    .nav-links a{margin-left:20px;}
+  }
+  @media(max-width:560px){
+    .seats{grid-template-columns:1fr;}
+    .svc-grid{grid-template-columns:1fr;}
+    .nav-inner{flex-direction:column;gap:12px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="#top">PRESCIENT ROAD</a>
+    <div class="nav-links">
+      <a href="#work">The Work</a>
+      <a href="#perspective">Perspective</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <img src="logo.jpg" alt="Prescient Road - Private market advice for long-term capital">
+    <h1>Venture counsel for family offices, from every side of the table.</h1>
+    <p>Prescient Road advises family offices, in the US and internationally, on entering venture capital as an asset class.</p>
+    <a class="btn" href="#contact">Start a Conversation</a>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="kicker">The Work</div>
+    <h2>Entering venture, deliberately.</h2>
+    <p class="lead">Most families know they want exposure to venture before they know how to build it. Prescient Road works across the full arc of a first or growing venture program.</p>
+    <div class="svc-grid">
+      <div class="svc"><h3>Strategy</h3><p>How venture fits within a broader portfolio, and what a first allocation should look like.</p></div>
+      <div class="svc"><h3>Portfolio Construction</h3><p>Pacing, sizing, and vintage-year balance for a first or growing program.</p></div>
+      <div class="svc"><h3>Fluency &amp; Coaching</h3><p>Working sessions for principals and family members building confidence in the asset class.</p></div>
+      <div class="svc"><h3>Manager Sourcing &amp; Selection</h3><p>Finding and evaluating venture managers worth a family's capital.</p></div>
+      <div class="svc"><h3>Fund &amp; Company Diligence</h3><p>Reading past fund brands and headline performance to how returns are actually generated.</p></div>
+      <div class="svc"><h3>Co-Investment</h3><p>Evaluating direct and co-investment opportunities alongside managers and other families.</p></div>
+    </div>
+    </section>
+
+<section id="perspective">
+  <div class="wrap">
+    <div class="kicker">Perspective</div>
+    <h2>Every seat at the table.</h2>
+    <p class="lead">Prescient Road reflects more than two decades spent investing in and building technology companies, and building investment firms themselves.</p>
+    <div class="seats">
+      <div class="seat"><span class="num">I</span><p>General Partner raising and investing institutional capital</p></div>
+      <div class="seat"><span class="num">II</span><p>LP investing in other managers</p></div>
+      <div class="seat"><span class="num">III</span><p>Direct investor in more than 90 companies</p></div>
+      <div class="seat"><span class="num">IV</span><p>Company founder, building from the ground up</p></div>
+      <div class="seat"><span class="num">V</span><p>Board member of public and private companies</p></div>
+    </div>
+    <p class="principle">The approach starts from how returns are actually generated, not fund brands, conventional allocation models, or headline performance.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="kicker">About</div>
+    <h2>Paul Lee</h2>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>Paul Lee is the founder of Prescient Road, where he works with family offices and venture investors on manager selection, portfolio construction, and direct investment opportunities.</p>
+        <p>Over more than two decades investing in and building technology companies, Paul co-founded BuildersVC, where he serves as Managing Partner, and founded Roniin LLC, where he served as Founder and CEO. He was previously a General Partner at Lightbank, where he led early-stage investments including Udemy, and a founding partner of Peacock Equity Fund, a venture investment platform formed by NBC Universal and GE Capital. The through line: not only investing in companies, but building investment firms and companies from the ground up.</p>
+        <p>Today, Paul works with family offices in the US and internationally that are entering venture capital as an asset class. Select work with emerging managers keeps him close to how the next generation of venture firms is being built, and to what LPs will be asked to evaluate.</p>
+      </div>
+      <div class="cred">
+        <div class="cred-block">
+          <h4>Firms</h4>
+          <p>BuildersVC, Co-Founder<br>Roniin LLC, Founder &amp; CEO<br>Lightbank, General Partner<br>Peacock Equity Fund, Founding Partner</p>
+        </div>
+        <div class="cred-block">
+          <h4>Board Experience</h4>
+          <p>Udemy &middot; Sprout Social<br>Carbon Health &middot; Lifeway Foods</p>
+        </div>
+        <div class="cred-block">
+          <h4>Track Record</h4>
+          <p>Invested in more than 90 companies across early-stage venture and direct investment</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="narrow">
+    <div class="kicker">Contact</div>
+    <h2>Start a conversation.</h2>
+    <p>Prescient Road works with a small number of families at a time. If your family is building or evaluating a venture program, write directly.</p>
+    <a class="btn ghost" href="mailto:paul@prescientroad.com">paul@prescientroad.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="fw">PRESCIENT ROAD</div>
+      <div class="copy">&copy; 2026 Prescient Road. All rights reserved.</div>
+    </div>
+    <p class="disclaimer">Prescient Road is an independent consulting practice and is not a registered investment adviser. Nothing on this site constitutes investment, legal, or tax advice, or an offer or solicitation to buy or sell any security.</p>
+  </div>
+</footer>
+
+</body>
+</html>
